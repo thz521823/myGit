@@ -1,0 +1,78 @@
+		dom
+
+dom属性：
+	innerHTML属性：获取元素内容最简单的方法就是使用innerHTML属性	.innerHTML=
+
+	nodeName属性:
+	nodeName是只读的；
+	元素节点的nodeName与标签名相同；
+	属性节点的nodeName与属性名相同；
+	文本节点的nodeName始终是#text;
+	文档节点的nodeName始终是#document
+
+	nodeValue属性：
+	元素节点的nodevalue是undefined或null；
+	文本节点的nodevalue是文本本身；
+	属性节点的nodeValue是属性值；
+
+
+dom访问：
+	访问html元素
+	document.getElementById()方法		通过id
+	document.getElementByClassName()方法	通过class
+	document.getElementByTagName("p")方法    	通过标签名、
+
+
+dom修改：
+	document.getElementBy
+	创建html内容:	.innerHTML = ;
+	改变css样式：	.style.
+	创建新的html元素：	document.createElement();   
+	<div id = "demo">
+	</div>
+	<script>
+	var x = document.createElement("p");   创建p元素
+	var z = document.createTextNode("内容")  创建文本节点 
+	x.appendChild(z);//将z添加到x节点上； 
+	var y = document.getElementById("demo");
+	y.appendChild(x);
+	</script>
+	y.insertBefroe(x,m); 将x添加到y节点中在m元素之前；
+
+	删除已有的html元素：必须清楚父元素
+	var  parent = document.getElementById("demo");
+	var child = document.getElementById("div1");
+	parent.removeChild(child);    removeChild() : 添加节点；
+
+	替换元素
+	var x = document.createElement("p");
+	var parent = document.getElementById("demo");
+	var z = document.getElementById("div1")
+	parent.replaceChild(x,z);  将parent元素中的z元素替换为x元素；  replaceChild() 替换；
+
+
+dom导航：
+	getElementByTagName();返回节点列表；
+	var x = getElementByTagName("p") ;选取所有的p元素 
+	节点列表长度：x.length;
+
+	导航节点关系：	parentNode:父节点
+			firstChild:首个子节点
+			lastChild:最后一个子节点
+
+
+
+	getAttribute():返回指定的属性值；
+	setAttribute():把指定属性或修改为指定的值；
+	<div id = "div1">
+		<p id="p1" style="font-size:10px"></p>
+	</div>
+	<script>
+	var ph = document.getElementById("p1");
+	var i = document.getAttribute("id");
+	var st = document.getAttribute("style");
+	var np = document.createElement("p");
+	np.setAttribute("id",i+"n")
+	</script>
+  	
+
